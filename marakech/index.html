@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Marrakech</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="canvas"></canvas>
+    <div class="main" id="observable">
+        <div class="left info">
+            <h3>Игрок 1</h3>
+        </div>
+        <div class="line can">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="right info">
+            <div>
+                <h3>Игрок 2</h3>
+            </div>
+            <div id="arrows">
+                <button v-on:click="arrows(38)" id="up">Up</button>
+                <button v-on:click="arrows(40)" id="down">Down</button>
+                <button v-on:click="arrows(37)" id="left">Left</button>
+                <button v-on:click="arrows(39)" id="right">Right</button>
+                <button v-on:click="dice" id="dice">Dice</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="map.js"></script>
     <script src="assan.js"></script>
     <script src="test.js"></script>

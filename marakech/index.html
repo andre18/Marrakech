@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Marrakech</title>
@@ -8,27 +8,53 @@
 <body>
     <div class="main" id="observable">
         <div class="left info">
-            <h3>Игрок 1</h3>
+            <!-- Игрок 1 и его информация о коврах и деньгах -->
+            <div>
+                <h3>Игрок 1</h3>
+            </div>
+            <div class="gamer">
+                <div class="carpet">
+                    <p>0</p>
+                </div>
+                <div class="money">
+                    <p>0</p>
+                </div>
+                <div class="carpet_on_field">
+                    <p>0</p>
+                </div>
+            </div>
+            <!-- Игральный кубик -->
+            <div class="wrapper">
+                <div class="tools_dice">
+                    <div id="dice-side-1" class="dice">0</div>
+                </div>
+                <div id="dice" class="tools_dice">
+                    <button type="button" class="dice-roll" v-on:click="dice" disabled="disabled">roll dice</button>
+                </div>
+            </div>
         </div>
+        <!-- Игровое поле -->
         <div class="line can">
             <canvas id="canvas"></canvas>
         </div>
         <div class="right info">
+            <!-- Игрок 2 и его информация о коврах и деньгах -->
             <div>
                 <h3>Игрок 2</h3>
             </div>
-            <div id="arrows">
+            <!-- Стрелки, поворот фигурки -->
+            <div id="arrows" class="tools">
                 <button v-on:click="arrows(38)" id="up">Up</button>
                 <button v-on:click="arrows(40)" id="down">Down</button>
                 <button v-on:click="arrows(37)" id="left">Left</button>
                 <button v-on:click="arrows(39)" id="right">Right</button>
-                <button v-on:click="dice" id="dice">Dice</button>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="map.js"></script>
     <script src="assan.js"></script>
+    <script src="carpet.js"></script>
     <script src="test.js"></script>
 </body>
 </html>
